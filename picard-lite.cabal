@@ -1,0 +1,135 @@
+cabal-version:      2.4
+name:               picard-lite
+version:            0.1.0.0
+
+author:             MinhTu Thomas Hoang
+maintainer:         minhtu.hoang19@gmail.com
+
+extra-source-files: 
+    LICENSE.md
+  , NOTICE.md
+
+build-type:         Simple
+
+library
+  exposed-modules:
+      Control.Monad.Yoctoparsec.Class
+      PicardLite.Types
+      PicardLite.Language.SQL.SpiderSQL.Lexer
+      PicardLite.Language.SQL.SpiderSQL.Parse
+      PicardLite.Language.SQL.SpiderSQL.Prelude
+      PicardLite.Language.SQL.SpiderSQL.Syntax
+  hs-source-dirs:
+      src
+  default-extensions: 
+      DeriveDataTypeable 
+    , ExistentialQuantification 
+    , FlexibleInstances 
+    , KindSignatures
+    , LambdaCase
+    , MagicHash
+    , RankNTypes
+    , RecordWildCards
+    , ScopedTypeVariables
+    , TypeSynonymInstances
+    , DataKinds
+    , DeriveGeneric 
+    , DerivingStrategies
+    , DeriveAnyClass
+    , DerivingVia
+    , GeneralizedNewtypeDeriving
+    , FlexibleContexts
+    , TypeApplications 
+    , ConstraintKinds
+    , MultiParamTypeClasses
+    , TupleSections
+  ghc-options: -W -Wall
+  build-depends:
+      QuickCheck
+    , attoparsec
+    , aeson
+    , base
+    , bytestring
+    , containers
+    , data-default
+    , deepseq
+    , free
+    , generic-lens
+    , ghc >=8.10.4 && <8.11
+    , hashable
+    , lens
+    , mtl
+    , parsers
+    , STMonadTrans
+    , text
+    , transformers
+    , unordered-containers
+    , vector
+    , yoctoparsec
+  default-language: Haskell2010
+
+test-suite spec
+  x-doctest-components: lib
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      PicardLite.Language.SQL.SpiderSQL.Academic
+      PicardLite.Language.SQL.SpiderSQL.AssetsMaintenance
+      PicardLite.Language.SQL.SpiderSQL.Bike1
+      PicardLite.Language.SQL.SpiderSQL.Car1
+      PicardLite.Language.SQL.SpiderSQL.Chinook1
+      PicardLite.Language.SQL.SpiderSQL.ConcertSinger
+      PicardLite.Language.SQL.SpiderSQL.DepartmentManagement
+      PicardLite.Language.SQL.SpiderSQL.Flight1
+      PicardLite.Language.SQL.SpiderSQL.Geo
+      PicardLite.Language.SQL.SpiderSQL.Inn1
+      PicardLite.Language.SQL.SpiderSQL.MatchSeason
+      PicardLite.Language.SQL.SpiderSQL.Pets1
+      PicardLite.Language.SQL.SpiderSQL.PhoneMarket
+      PicardLite.Language.SQL.SpiderSQL.ProductCatalog
+      PicardLite.Language.SQL.SpiderSQL.Scholar
+      PicardLite.Language.SQL.SpiderSQL.StormRecord
+      PicardLite.Language.SQL.SpiderSQL.TestItem
+  hs-source-dirs:
+      tests
+  default-extensions: 
+      DeriveDataTypeable
+    , ExistentialQuantification
+    , FlexibleInstances
+    , KindSignatures
+    , LambdaCase
+    , MagicHash
+    , RankNTypes
+    , RecordWildCards
+    , ScopedTypeVariables
+    , TypeSynonymInstances
+    , DataKinds
+    , DeriveGeneric
+    , DerivingStrategies
+    , DeriveAnyClass
+    , DerivingVia
+    , GeneralizedNewtypeDeriving
+    , FlexibleContexts
+    , TypeApplications
+    , ConstraintKinds
+    , MultiParamTypeClasses
+    , TupleSections
+  ghc-options: -W -Wall
+  build-depends:
+      attoparsec
+    , base
+    , containers
+    , free
+    , ghc >=8.10.4 && <8.11
+    , hedgehog
+    , mtl
+    , parsers
+    , picard-lite
+    , tasty
+    , tasty-hunit
+    , text
+    , trifecta
+    , unordered-containers
+    , vector
+    , yoctoparsec
+  default-language: Haskell2010
