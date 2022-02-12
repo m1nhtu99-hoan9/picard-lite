@@ -115,7 +115,7 @@ import qualified Text.Trifecta.Result          as Trifecta
    SOFTWARE.  
 -}
 
--- | Run 'cabal repl test:picard-test' to get a REPL for the tests.
+-- | Run 'cabal repl test:spec' to get a REPL for the tests.
 main :: IO ()
 main = T.defaultMain testTree
 
